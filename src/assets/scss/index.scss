@@ -1,0 +1,83 @@
+body, ul { margin:0; padding:0; outline:0;}
+* {box-sizing: border-box; }
+div, section, header, footer, main, nav { display: flex;}
+@keyframes rotate {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+body { 
+    background: rgb(26, 26, 26) url("../images/astros/main-bg.jpg");
+    color: rgb(224, 224, 224);
+    font-family: 'Roboto', sans-serif;
+    > header, > footer, > main {
+        width: 100%;
+        border: solid 0.5px red;
+    }
+    > header, > footer {
+        justify-content: space-between;
+        align-items: center;
+        min-height: 100px;
+        > div:first-child {
+            margin-left: 2%;
+        }
+        > div:last-child {
+            margin-right: 2%;
+        }
+    }
+    > main {
+        min-height: calc(100vh - 200px);
+        justify-content: center;
+        align-items: center;
+        > section {
+            width: 60%;
+            .galaxy > div {
+                flex-direction: column;
+            }
+            .astros {
+                
+                animation: rotate infinite 60s linear;
+                position: absolute;
+                left: 41.5vw;
+                top: 5vw;
+                z-index: 0;
+                height: 650px;
+                width: 540px;
+            }
+                .galaxy > .text-details, > .items-details{
+                    flex-grow: 1;
+                    flex-basis: 60px;
+                    position: relative;  
+                    z-index: 2;
+                }
+                .galaxy  > .title {
+                position: relative;
+                z-index: 2;
+                    h1 {
+                        font-size: 6em;
+                        margin-bottom:5%;
+                        letter-spacing:0.5px;
+                    }
+                    h2 {
+                        font-size: 0.9em;
+                        letter-spacing:4.5px;
+                    }
+                    h1,h2,h3 {
+                        margin: 0;
+                        text-transform: uppercase;
+                    }
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    flex-basis: 500px;
+                }
+                .galaxy > .items-details ul > li {
+                    margin-bottom: 15px;
+                    line-height: 2em;
+                    text-align: right;
+                    display: flex;
+                    flex-direction: column;
+                }
+            
+        }
+    }
+}
